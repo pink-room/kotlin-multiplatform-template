@@ -1,0 +1,13 @@
+build
+captures
+.gradle
+.idea/*
+out
+*.iml
+.directory
+node_modules
+local.properties
+android/mobile/release/*
+
+.DS_Store
+.externalNativeBuild

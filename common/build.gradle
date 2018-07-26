@@ -1,0 +1,12 @@
+plugins {
+    id 'kotlin-platform-common' version '1.2.51'
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-common'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-annotations-common'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-common'
+}

@@ -1,0 +1,12 @@
+plugins {
+    id 'kotlin-platform-js' version '1.2.51'
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    expectedBy project(':common')
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-js'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-js'
+}
