@@ -1,0 +1,33 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.2.51'
+}
+
+group 'co.pinkroom.multiplatformtemplate'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'application'
+
+mainClassName = 'co.pinkroom.multiplatformtemplate.MainKt'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url "https://dl.bintray.com/kotlin/ktor" }
+}
+
+dependencies {
+    compile project(':common-jvm')
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    compile 'io.ktor:ktor-server-netty:0.9.3'
+    compile 'io.ktor:ktor-gson:0.9.3'
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+kotlin { experimental { coroutines 'enable' } }
