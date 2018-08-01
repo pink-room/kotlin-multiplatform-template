@@ -1,13 +1,11 @@
-plugins {
-    id 'kotlin-platform-jvm' version '1.2.51'
-}
-repositories {
-    mavenCentral()
-}
+apply plugin: 'kotlin-platform-jvm'
 
 dependencies {
     expectedBy project(':common')
+
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
+
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'

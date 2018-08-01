@@ -1,12 +1,10 @@
-plugins {
-    id 'kotlin-platform-common' version '1.2.51'
-}
-repositories {
-    mavenCentral()
-}
+apply plugin: 'kotlin-platform-common'
+apply plugin: 'kotlinx-serialization'
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-common'
-    testImplementation 'org.jetbrains.kotlin:kotlin-test-annotations-common'
-    testImplementation 'org.jetbrains.kotlin:kotlin-test-common'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-common'
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
+
+    testCompile 'org.jetbrains.kotlin:kotlin-test-annotations-common'
+    testCompile 'org.jetbrains.kotlin:kotlin-test-common'
 }

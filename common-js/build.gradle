@@ -1,12 +1,16 @@
-plugins {
-    id 'kotlin-platform-js' version '1.2.51'
-}
-repositories {
-    mavenCentral()
-}
+apply plugin: 'kotlin-platform-js'
 
 dependencies {
     expectedBy project(':common')
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-js'
-    testImplementation 'org.jetbrains.kotlin:kotlin-test-js'
+
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-js'
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
+
+    testCompile 'org.jetbrains.kotlin:kotlin-test-js'
+}
+
+[compileKotlin2Js, compileTestKotlin2Js]*.configure {
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+    kotlinOptions.moduleKind = 'commonjs'
 }
