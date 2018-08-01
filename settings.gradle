@@ -1,24 +1,3 @@
-pluginManagement {
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "kotlin-platform-common") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-            if (requested.id.id == "kotlin-platform-jvm") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-            if (requested.id.id == "kotlin-platform-js") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-            if (requested.id.id == "kotlin-platform-android") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-            if (requested.id.id == "kotlin2js") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-        }
-    }
-}
 rootProject.name = 'kotlin-multiplatform-template'
 
-include 'common', 'common-jvm', 'common-js', 'android', 'android:mobile', 'web'
+include 'common', 'common-jvm', 'common-js', 'android', 'android:mobile', 'web', 'backend'

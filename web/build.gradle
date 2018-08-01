@@ -1,37 +1,24 @@
 group 'co.pinkroom.multiplatformtemplate'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    ext.kotlin_version = '1.2.51'
-
-    repositories {
-        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.33"
-    }
-}
-
 apply plugin: 'org.jetbrains.kotlin.frontend'
 apply plugin: 'kotlin2js'
-apply plugin: 'kotlin-platform-js'
 
-repositories {
-    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
-    mavenCentral()
+dependencies {
+    compile project(':common-js')
+
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-js'
+    compile('org.jetbrains.kotlinx:kotlinx-html-js:0.6.4') { force = true }
+
+    testCompile 'org.jetbrains.kotlin:kotlin-test-js'
 }
 
 compileKotlin2Js {
-    kotlinOptions {
-        metaInfo = true
-        outputFile = "$project.buildDir.path/js/${project.name}.js"
-        sourceMap = true
-        moduleKind = 'commonjs'
-        main = "call"
-    }
+    kotlinOptions.metaInfo = true
+    kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.moduleKind = 'commonjs'
+    kotlinOptions.main = "call"
 }
 
 kotlinFrontend {
@@ -42,12 +29,5 @@ kotlinFrontend {
     webpackBundle {
         bundleName = "main"
         contentPath = file('src/main/web')
-        port = 8080
     }
-}
-
-dependencies {
-    expectedBy project(':common')
-    compile 'org.jetbrains.kotlin:kotlin-stdlib-js'
-    testCompile 'org.jetbrains.kotlin:kotlin-test-js'
 }

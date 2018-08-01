@@ -2,6 +2,8 @@ build
 captures
 .gradle
 .idea/*
+bin
+gen
 out
 *.iml
 .directory
