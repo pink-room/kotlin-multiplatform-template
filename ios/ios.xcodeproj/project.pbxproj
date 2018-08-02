@@ -69,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E739388211359E200B8BD91 /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = common; path = ../../common; sourceTree = "<group>"; };
 		AB5D9CDF2112100200DFDFDB /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5D9CE22112100200DFDFDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB5D9CE42112100200DFDFDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		AB5D9D2F2112222900DFDFDB /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5D9D312112222900DFDFDB /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		AB5D9D322112222900DFDFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5D9D3E2112230700DFDFDB /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../common/src; sourceTree = "<group>"; };
 		AB5D9D3F2112231100DFDFDB /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = "../../common-ios/src"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +171,7 @@
 		AB5D9D302112222900DFDFDB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				AB5D9D3E2112230700DFDFDB /* src */,
+				9E739388211359E200B8BD91 /* common */,
 				AB5D9D3F2112231100DFDFDB /* src */,
 				AB5D9D312112222900DFDFDB /* Common.h */,
 				AB5D9D322112222900DFDFDB /* Info.plist */,
