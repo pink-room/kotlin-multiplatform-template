@@ -1,0 +1,14 @@
+apply plugin: 'konan'
+
+konan.targets = ['ios_arm64', 'ios_x64']
+
+konanArtifacts {
+    framework('Common', targets: ['iphone', 'iphone_sim']) {
+        enableDebug true
+        enableMultiplatform true
+    }
+}
+
+dependencies {
+    expectedBy project(':common')
+}
