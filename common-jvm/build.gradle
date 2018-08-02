@@ -4,7 +4,6 @@ dependencies {
     expectedBy project(':common')
 
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
