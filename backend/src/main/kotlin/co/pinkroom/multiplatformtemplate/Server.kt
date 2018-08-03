@@ -1,5 +1,6 @@
 package co.pinkroom.multiplatformtemplate
 
+import co.pinkroom.multiplatformtemplate.controllers.meme
 import co.pinkroom.multiplatformtemplate.controllers.recipe
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -27,6 +28,7 @@ fun Application.module() {
             }
         }
         recipe()
+        meme()
     }
 }
 
