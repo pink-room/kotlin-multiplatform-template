@@ -1,7 +1,7 @@
 build
 captures
 .gradle
-.idea/*
+.idea
 bin
 gen
 out
