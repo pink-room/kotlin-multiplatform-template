@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7CD0529DF3C44CBB4DFB9A54 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8BAE2594F71FA7D1D07106 /* Pods_ios.framework */; };
-		AB5B23F0212237160072BDC1 /* common_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5B23EF212237160072BDC1 /* common_ios.framework */; };
-		AB5B23F1212237160072BDC1 /* common_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB5B23EF212237160072BDC1 /* common_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB5B23F321230B850072BDC1 /* common_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5B23F221230B850072BDC1 /* common_client_ios.framework */; };
+		AB5B23F421230B850072BDC1 /* common_client_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB5B23F221230B850072BDC1 /* common_client_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB5D9CE32112100200DFDFDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D9CE22112100200DFDFDB /* AppDelegate.swift */; };
 		AB5D9CE52112100200DFDFDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D9CE42112100200DFDFDB /* ViewController.swift */; };
 		AB5D9CE82112100200DFDFDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5D9CE62112100200DFDFDB /* Main.storyboard */; };
@@ -43,7 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AB5B23F1212237160072BDC1 /* common_ios.framework in Embed Frameworks */,
+				AB5B23F421230B850072BDC1 /* common_client_ios.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,7 +54,7 @@
 		3BA5C872BA52AB14054C9DE4 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		60F8B5464512908684563078 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		8F8BAE2594F71FA7D1D07106 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB5B23EF212237160072BDC1 /* common_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = common_ios.framework; path = "../common-ios/build/lib/main/debug/ios_x64/common_ios.framework"; sourceTree = "<group>"; };
+		AB5B23F221230B850072BDC1 /* common_client_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = common_client_ios.framework; path = "../common-client-ios/build/lib/main/debug/ios_x64/common_client_ios.framework"; sourceTree = "<group>"; };
 		AB5D9CDF2112100200DFDFDB /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5D9CE22112100200DFDFDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB5D9CE42112100200DFDFDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5B23F321230B850072BDC1 /* common_client_ios.framework in Frameworks */,
 				7CD0529DF3C44CBB4DFB9A54 /* Pods_ios.framework in Frameworks */,
-				AB5B23F0212237160072BDC1 /* common_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +117,7 @@
 		AB5D9CD62112100200DFDFDB = {
 			isa = PBXGroup;
 			children = (
-				AB5B23EF212237160072BDC1 /* common_ios.framework */,
+				AB5B23F221230B850072BDC1 /* common_client_ios.framework */,
 				AB5D9CE12112100200DFDFDB /* ios */,
 				AB5D9CF62112100300DFDFDB /* iosTests */,
 				AB5D9D012112100300DFDFDB /* iosUITests */,
@@ -516,7 +516,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
-					"$(PROJECT_DIR)/../common-ios/build/lib/main/debug/ios_x64",
+					"$(PROJECT_DIR)/../common-client-ios/build/lib/main/debug/ios_x64",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

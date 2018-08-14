@@ -1,6 +1,6 @@
 import UIKit
 import SDWebImage
-import common_ios
+import common_client_ios
 
 class ViewController: UIViewController, MemesContractView {
     

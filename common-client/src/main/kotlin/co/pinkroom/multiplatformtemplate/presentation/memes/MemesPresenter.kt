@@ -1,6 +1,6 @@
 package co.pinkroom.multiplatformtemplate.presentation.memes
 
-import co.pinkroom.multiplatformtemplate.data.Meme
+import co.pinkroom.multiplatformtemplate.data.model.Meme
 import co.pinkroom.multiplatformtemplate.domain.GetMemes
 
 class MemesPresenter(private val getMemes: GetMemes) : MemesContract.Presenter {

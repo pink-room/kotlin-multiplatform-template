@@ -1,6 +1,6 @@
 package co.pinkroom.multiplatformtemplate.data.repository
 
-import co.pinkroom.multiplatformtemplate.data.Meme
+import co.pinkroom.multiplatformtemplate.data.model.Meme
 
 class MemeRepository {
 

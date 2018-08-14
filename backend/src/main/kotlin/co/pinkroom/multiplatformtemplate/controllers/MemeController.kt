@@ -1,6 +1,6 @@
 package co.pinkroom.multiplatformtemplate.controllers
 
-import co.pinkroom.multiplatformtemplate.data.Meme
+import co.pinkroom.multiplatformtemplate.data.model.Meme
 import io.ktor.application.call
 import io.ktor.response.respond
 import io.ktor.routing.Routing

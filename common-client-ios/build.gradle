@@ -1,15 +1,16 @@
 apply plugin: 'kotlin-platform-native'
 
 dependencies {
-    expectedBy project(':common')
+    expectedBy project(':common-client')
+    implementation project(':common-ios')
 }
 
 sourceSets {
     main {
         component {
             target 'ios_x64', 'ios_arm64'
-            outputKinds = [KLIBRARY]
-            extraOpts '--disable', 'devirtualization', '-module_name', 'K'
+            outputKinds = [FRAMEWORK]
+            extraOpts '--disable', 'devirtualization', '-module_name', ''
         }
     }
     test {

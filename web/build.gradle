@@ -5,7 +5,7 @@ apply plugin: 'org.jetbrains.kotlin.frontend'
 apply plugin: 'kotlin2js'
 
 dependencies {
-    compile project(':common-js')
+    compile project(':common-client-js')
 
     compile 'org.jetbrains.kotlin:kotlin-stdlib-js'
 

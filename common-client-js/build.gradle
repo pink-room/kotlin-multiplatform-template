@@ -1,0 +1,16 @@
+apply plugin: 'kotlin-platform-js'
+
+dependencies {
+    expectedBy project(':common-client')
+    compile project(':common-js')
+
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-js'
+
+    testCompile 'org.jetbrains.kotlin:kotlin-test-js'
+}
+
+[compileKotlin2Js, compileTestKotlin2Js]*.configure {
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+    kotlinOptions.moduleKind = 'commonjs'
+}
