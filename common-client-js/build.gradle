@@ -5,6 +5,7 @@ dependencies {
     compile project(':common-js')
 
     compile 'org.jetbrains.kotlin:kotlin-stdlib-js'
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutines_version"
 
     testCompile 'org.jetbrains.kotlin:kotlin-test-js'
 }

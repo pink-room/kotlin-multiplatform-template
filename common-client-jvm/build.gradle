@@ -5,6 +5,7 @@ dependencies {
     compile project(':common-jvm')
 
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.jetbrains.kotlin:kotlin-test'

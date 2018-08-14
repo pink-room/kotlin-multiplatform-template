@@ -3,6 +3,8 @@ apply plugin: 'kotlin-platform-native'
 dependencies {
     expectedBy project(':common-client')
     implementation project(':common-ios')
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
 }
 
 sourceSets {
