@@ -1,10 +1,10 @@
 import UIKit
-import Common
 import SDWebImage
+import common_ios
 
-class ViewController: UIViewController, CommonMemesContractView {
+class ViewController: UIViewController, MemesContractView {
     
-    private let presenter = CommonMemesPresenter(getMemes: CommonGetMemes(memeRepository: CommonMemeRepository()))
+    private let presenter = MemesPresenter(getMemes: GetMemes(memeRepository: MemeRepository()))
     
     @IBOutlet weak var memeView: UIImageView!
     @IBOutlet weak var titleView: UILabel!

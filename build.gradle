@@ -1,7 +1,7 @@
 allprojects {
     buildscript {
         ext.kotlin_version = '1.2.60'
-        ext.kotlin_native_version = '0.8.2'
+        ext.kotlin_native_version = '0.9-dev-2922'
         ext.coroutines_version = '0.24.0'
 
         repositories {
