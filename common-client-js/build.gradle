@@ -15,3 +15,5 @@ dependencies {
     kotlinOptions.sourceMapEmbedSources = "always"
     kotlinOptions.moduleKind = 'commonjs'
 }
+
+kotlin { experimental { coroutines "enable" } }
