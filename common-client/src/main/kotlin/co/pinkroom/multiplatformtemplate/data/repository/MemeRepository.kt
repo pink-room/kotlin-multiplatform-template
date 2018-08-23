@@ -21,7 +21,6 @@ class MemeRepository {
     }
 
     private suspend fun getMemesFromServer(): String {
-
         return client.get {
             url {
                 protocol = URLProtocol.HTTPS
@@ -32,6 +31,7 @@ class MemeRepository {
         }
     }
 
+    // TODO: This should be refactored as soon as kotlinx serialization is available for Kotlin Native
     private fun parseResultToMemes(result: String): List<Meme> {
         val elem = JsonTreeParser(result).read()
         return elem.jsonArray.map {
