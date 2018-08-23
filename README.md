@@ -38,7 +38,7 @@ useful if you want to start a multiplatform project. Please **note** that this p
 
 ## Architecture
 
-The **architecture** of this project is composed by one **common module** and it's **platform specific** implementations
+The **architecture** of this project is composed by one **common module** and its **platform specific** implementations
 (jvm, js and ios). A **common-client** module and the **platform specific** modules. One **backend** and three
 **clients** (android, ios and web).
 
@@ -86,7 +86,7 @@ Finally, the **backend** module is connected with the common code by **compiling
 <i><b>Note:</b> This architecture was designed to work with both <b>backend</b> and <b>clients</b>. If you <b>only</b>
 want to implement a <b>multiplatform</b> project with <b>clients</b> (probably the most common use case), you can
 <b>merge</b> the <b>common</b> modules with the <b>common-client</b> modules. Moreover, don't forget to <b>remove</b>
-the <b>platform</b> specific modules if you will not implement modules which use that <b>platforms</b>.</i>
+the <b>platform</b> specific modules if you will not implement modules which use that <b>platform</b>.</i>
 </td>
 </tr>
 </table>
