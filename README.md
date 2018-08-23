@@ -38,42 +38,55 @@ useful if you want to start a multiplatform project. Please **note** that this p
 
 ## Architecture
 
-The architecture of this project is composed by 8 different modules:
+The **architecture** of this project is composed by one **common module** and its **platform specific** implementations
+(jvm, js and ios). A **common-client** module and the **platform specific** modules. One **backend** and three
+**clients** (android, ios and web).
 
-- **common**: Contains all the **common code** shared between the modules. Such as the
-**data**, **business** and **presentation** logic.
-- **common-jvm**: Where the **JVM** specific implementations are placed.
-- **common-js**: Contains the specific implementations for the **JS** platforms.
-- **common-ios**: This is responsible for the **native** specific implementations. 
+<h3 align="center">
+  <img src="architecture.png" alt="Project Architecture" />
+</h3>
+
+- **common**: Contains all the **common code** shared between the modules. In this case are only the **data** models.
+- **common-jvm/js/ios**: Where the **common platform specific** implementations are placed.
+- **common-client**: Where the **clients common** code is implemented. Such as the **business** and **presentation**
+logic.
+- **common-client-jvm/js/ios**: Responsible for the **common client specific** implementations.
 - **backend**: Contains the **server** logic and a REST API.
-- **web**: The **web client** that runs in the browser.
 - **android**: Responsible for the **android** clients. Contains a **mobile** module but you can add
 others (e.g.: **wear**).
 - **ios**: The **iOS** client!
+- **web**: The **web client** that runs in the browser.
 
-But how do they connect with each other?
+How everything is connected?
 
-The **common** module contains the data models, repositories, use cases and presenters that will be
-shared with the other modules.
+This project uses [Gradle](https://gradle.org/) that is responsible to **build** and **connect** all the modules.
 
-And if we need specific implementations for each platform? This's why we have the **common-jvm**,
-**common-js** and **common-ios** platform modules. They are connect to the **common** module by an
-**expectedBy** dependency and implement the **actual** classes that are **expected** in the
-**common** module (e.g.: date, http requests...).
+The **common** module contains only the data models since it's the only code that we want to share between the
+**backend** and the **client** modules.
 
-The other modules **(backend, web, android and ios)** use the **common** modules by **compiling**
-the platform specific module. And, since we are using the MVP pattern, clients only need to
-implement the **View** part that is specific for each platform.
+But, what if this **common** module needs specific implementations for each platform? This's why we have the
+**common-jvm**, **common-js** and **common-ios** platform modules. They are connected with the **common** module by an
+**expectedBy** dependency and implement the **actual** classes that are **expected** in the **common** module
+(e.g.: date, etc...).
+
+The **common-client** module is responsible to implement the repositories, use cases and presenters. This is the code
+that we want to share only between clients. And, again, if we want to implement platform specific parts
+(e.g.: coroutines dispatcher, etc...) we have the **common-client-jvm**, **common-client-js** and **common-client-ios**
+platform modules.
+
+The other modules **(android, ios, and web)** use the **common-client** modules by **compiling** the platform specific
+module. And, since we are using the MVP pattern, clients only need to implement the **View** part that is specific for
+each platform.
+
+Finally, the **backend** module is connected with the common code by **compiling** the **common-jvm** module.
 
 <table>
 <tr>
 <td>
-<i><b>Note:</b> The <b>backend</b> module is just here as an example. In a real project, if you want
-to share code between the clients and the backend (probably only the data part), you should only
-have that classes in the <b>common</b> module and create a new module called <b>common-client</b>
-that will contain the <b>repositories</b>, <b>use cases</b> and <b>presenters</b>. This way, the 
-<b>backend</b> module only needs to compile the <b>common</b> module instead of all the code in the
-<b>common-client</b>.</i>
+<i><b>Note:</b> This architecture was designed to work with both <b>backend</b> and <b>clients</b>. If you <b>only</b>
+want to implement a <b>multiplatform</b> project with <b>clients</b> (probably the most common use case), you can
+<b>merge</b> the <b>common</b> modules with the <b>common-client</b> modules. Moreover, don't forget to <b>remove</b>
+the <b>platform</b> specific modules if you will not implement modules which use that <b>platform</b>.</i>
 </td>
 </tr>
 </table>
@@ -85,18 +98,16 @@ The backend is implemented using the [ktor](http://ktor.io/) framework.
 To run it, simply execute `./gradlew :backend:run` in the root of the project and the server will 
 start listening at [localhost:8080](http://localhost:8080).
 
-## Web
+You can test it by opening the [memes route](http://localhost:8080/memes) in your browser.
 
-<h3 align="center">
-  <img src="web.png" alt="Web Screen" />
-</h3>
-
-To build the web client we use the [Kotlin Frontend Plugin](https://github.com/Kotlin/kotlin-frontend-plugin).
-
-Currently, we are only using **Kotlin/JS** in order to manipulate the DOM. However, you can easily
-use this plugin to write your UI in [React](https://reactjs.org/).
-
-Run it with `./gradlew :web:run` and then open it on your [browser](http://localhost:8088).
+<table>
+<tr>
+<td>
+<i>Since the server will run in your localhost, I suggest you to use <a href="https://ngrok.com/">ngrok</a> to
+expose your local server to a public URL. <b>Don't forget to change the server host in the ApiUtils.kt.</b></i>
+</td>
+</tr>
+</table>
 
 ## Android
 
@@ -125,9 +136,32 @@ Then, install the dependencies: `pod install`.
 
 After that, double click on the **ios.xcworkspace** file to open the project.
 
-Now, build the project by clicking in the **run** button. This will build and run the iOS project
-in an emulator. If you have any error please build the **Common** module first and then run the
-**ios** module again.
+Now, before running the project you also need to build the **common-client-ios** module:
+`./gradlew :common-client-ios:build`.
+
+Then, build the project by clicking in the **run** button. This will build and run the iOS project in an emulator.
+
+## Web
+
+<table>
+<tr>
+<td>
+<i><b>Note:</b> Currently the web module is not working since we are waiting for <a href="http://ktor.io/">ktor</a> to
+release the JS client.</i>
+</td>
+</tr>
+</table>
+
+<h3 align="center">
+  <img src="web.png" alt="Web Screen" />
+</h3>
+
+To build the web client we use the [Kotlin Frontend Plugin](https://github.com/Kotlin/kotlin-frontend-plugin).
+
+Currently, we are only using **Kotlin/JS** in order to manipulate the DOM. However, you can easily
+use this plugin to write your UI in [React](https://reactjs.org/).
+
+Run it with `./gradlew :web:run` and then open it on your [browser](http://localhost:8088).
 
 ## Credits
 
@@ -135,6 +169,7 @@ This project wouldn't be possible without the help of the community and other am
 projects. Here are some really good examples that you can also look at:
 
 - https://github.com/MarcinMoskala/KotlinAcademyApp
+- https://github.com/ktorio/ktor-samples
 - https://github.com/jetbrains/kotlinconf-app
 - https://github.com/damboscolo/kotlin-native-multiplatform
 - https://github.com/Albert-Gao/kotlin-native-mobile-multiplatform-example
@@ -144,9 +179,10 @@ projects. Here are some really good examples that you can also look at:
 
 - Dependency Injection
 - Tests
-- Multiplatform Http Requests ([ktor](http://ktor.io/) will publish a client soon...)
+- JS Http Client ([ktor](http://ktor.io/) will publish a client soon...)
 - Add a DB
 - Share Images / Resources
+- Improve gradle configurations
 - More...
 
 ## License

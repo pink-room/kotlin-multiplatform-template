@@ -1,14 +1,20 @@
-apply plugin: 'konan'
-
-konan.targets = ['ios_arm64', 'ios_x64']
-
-konanArtifacts {
-    framework('Common', targets: ['iphone', 'iphone_sim']) {
-        enableDebug true
-        enableMultiplatform true
-    }
-}
+apply plugin: 'kotlin-platform-native'
 
 dependencies {
     expectedBy project(':common')
+}
+
+sourceSets {
+    main {
+        component {
+            target 'ios_x64', 'ios_arm64'
+            outputKinds = [KLIBRARY]
+            extraOpts '--disable', 'devirtualization', '-module_name', 'K'
+        }
+    }
+    test {
+        component {
+            target 'ios_x64', 'ios_arm64'
+        }
+    }
 }

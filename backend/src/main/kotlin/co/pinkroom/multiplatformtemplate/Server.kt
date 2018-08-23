@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import io.ktor.application.Application
 import io.ktor.application.install
+import io.ktor.features.CORS
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.GsonConverter
 import io.ktor.http.ContentType
@@ -14,6 +15,8 @@ fun Application.module() {
     install(ContentNegotiation) {
         register(ContentType.Application.Json, GsonConverter(buildGson()))
     }
+
+    install(CORS)
 
     install(Routing) {
         meme()

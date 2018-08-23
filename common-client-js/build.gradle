@@ -1,10 +1,11 @@
 apply plugin: 'kotlin-platform-js'
 
 dependencies {
-    expectedBy project(':common')
+    expectedBy project(':common-client')
+    compile project(':common-js')
 
     compile 'org.jetbrains.kotlin:kotlin-stdlib-js'
-    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutines_version"
 
     testCompile 'org.jetbrains.kotlin:kotlin-test-js'
 }
@@ -14,3 +15,5 @@ dependencies {
     kotlinOptions.sourceMapEmbedSources = "always"
     kotlinOptions.moduleKind = 'commonjs'
 }
+
+kotlin { experimental { coroutines "enable" } }
