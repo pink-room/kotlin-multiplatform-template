@@ -1,0 +1,25 @@
+apply plugin: 'kotlin-platform-native'
+
+dependencies {
+    expectedBy project(':common-client')
+    implementation project(':common-ios')
+
+    implementation "org.jetbrains.kotlinx:jsonparser-native:$serialization_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
+    implementation "io.ktor:ktor-client-ios:$ktor_version"
+}
+
+sourceSets {
+    main {
+        component {
+            target 'ios_x64', 'ios_arm64'
+            outputKinds = [FRAMEWORK]
+            extraOpts '--disable', 'devirtualization', '-module_name', ''
+        }
+    }
+    test {
+        component {
+            target 'ios_x64', 'ios_arm64'
+        }
+    }
+}

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,19 +18,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxr-CN-jJf">
-                                <rect key="frame" x="16" y="323" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UcJ-gn-Cpi">
+                                <rect key="frame" x="16" y="215" width="343" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="hbr-WD-k5T"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ql-6p-mmN">
+                                <rect key="frame" x="16" y="405" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jJ-xg-koa">
+                                <rect key="frame" x="171" y="617" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jrf-Wh-5IO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8jJ-xg-koa" secondAttribute="bottom" constant="20" id="Jyd-gY-Ucq"/>
+                            <constraint firstItem="UcJ-gn-Cpi" firstAttribute="centerX" secondItem="8jJ-xg-koa" secondAttribute="centerX" id="dti-n4-ygq"/>
+                            <constraint firstItem="UcJ-gn-Cpi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="195" id="f6m-iH-fhL"/>
+                            <constraint firstItem="6Ql-6p-mmN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fpd-tk-qYo"/>
+                            <constraint firstItem="UcJ-gn-Cpi" firstAttribute="trailing" secondItem="6Ql-6p-mmN" secondAttribute="trailing" id="lep-68-epq"/>
+                            <constraint firstItem="6Ql-6p-mmN" firstAttribute="top" secondItem="UcJ-gn-Cpi" secondAttribute="bottom" constant="8" id="oYl-uc-PLx"/>
+                            <constraint firstItem="UcJ-gn-Cpi" firstAttribute="leading" secondItem="6Ql-6p-mmN" secondAttribute="leading" id="t8v-9r-4xw"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Ql-6p-mmN" secondAttribute="trailing" constant="16" id="tcF-eF-BXg"/>
+                            <constraint firstItem="8jJ-xg-koa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xAc-5J-2ax"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="recipeTitle" destination="Lxr-CN-jJf" id="8Hu-9G-eWQ"/>
+                        <outlet property="memeView" destination="UcJ-gn-Cpi" id="gHl-FH-fGO"/>
+                        <outlet property="titleView" destination="6Ql-6p-mmN" id="rBM-ON-dUl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

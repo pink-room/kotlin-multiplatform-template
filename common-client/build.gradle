@@ -1,0 +1,15 @@
+apply plugin: 'kotlin-platform-common'
+
+dependencies {
+    compile project(':common')
+
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-common'
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-jsonparser:$serialization_version"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
+    compile "io.ktor:ktor-client:$ktor_version"
+
+    testCompile 'org.jetbrains.kotlin:kotlin-test-annotations-common'
+    testCompile 'org.jetbrains.kotlin:kotlin-test-common'
+}
+
+kotlin { experimental { coroutines "enable" } }
