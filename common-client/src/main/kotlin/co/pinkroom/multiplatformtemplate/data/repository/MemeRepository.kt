@@ -1,6 +1,7 @@
 package co.pinkroom.multiplatformtemplate.data.repository
 
 import co.pinkroom.multiplatformtemplate.ApplicationDispatcher
+import co.pinkroom.multiplatformtemplate.data.api.ApiUtils
 import co.pinkroom.multiplatformtemplate.data.model.Meme
 import io.ktor.client.HttpClient
 import io.ktor.client.request.*
@@ -20,10 +21,11 @@ class MemeRepository {
     }
 
     private suspend fun getMemesFromServer(): String {
+
         return client.get {
             url {
                 protocol = URLProtocol.HTTPS
-                host = "48610d5f.ngrok.io"
+                host = ApiUtils.host
                 port = URLProtocol.HTTPS.defaultPort
                 encodedPath = "memes"
             }
