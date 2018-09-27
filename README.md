@@ -22,6 +22,12 @@ and the **iOS client** with [Xcode](https://developer.apple.com/xcode/).
 
 -------
 
+<p align="center">
+  <a href="https://github.com/pink-room/kotlin-multiplatform-template/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/pink-room/kotlin-multiplatform-template.svg">
+  </a>
+</p>
+
 ## Why?
 
 This project started because we wanted to test the power of Kotlin Multiplatform. As opposed to
