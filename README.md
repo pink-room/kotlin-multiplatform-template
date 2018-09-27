@@ -9,6 +9,8 @@ Currently we are using [IntellijIDEA](https://www.jetbrains.com/idea/) as the **
 the **Android client** was developed in [Android Studio](https://developer.android.com/studio/)
 and the **iOS client** with [Xcode](https://developer.apple.com/xcode/).
 
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20this%20Kotlin%20Multiplatform%20starter%20template!&url=https%3A%2F%2Fgithub.com%2Fpink-room%2Fkotlin-multiplatform-template&via=apinkroom&hashtags=kotlin,multiplatform,android,ios,web,developers)
+
 -------
 <p align="center">
     <a href="#architecture">Architecture</a> &bull;
