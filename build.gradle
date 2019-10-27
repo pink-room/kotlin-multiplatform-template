@@ -10,7 +10,7 @@ allprojects {
             maven { url "https://kotlin.bintray.com/kotlinx" }
             maven { url 'https://maven.google.com' }
             maven { url "https://plugins.gradle.org/m2/" }
-            maven { url "http://dl.bintray.com/kotlin/kotlin-dev" }
+            maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
             maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
             maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
             jcenter()
@@ -28,11 +28,11 @@ allprojects {
     }
 
     repositories {
-        maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap-1.2' }
         maven { url "https://kotlin.bintray.com/kotlinx" }
-        maven { url "http://dl.bintray.com/kotlin/kotlin-js-wrappers" }
-        maven { url "http://dl.bintray.com/kotlin/kotlin-dev" }
-        maven { url "http://dl.bintray.com/kotlinx/kotlinx" }
+        maven { url "https://dl.bintray.com/kotlin/kotlin-js-wrappers" }
+        maven { url "https://dl.bintray.com/kotlin/kotlin-dev" }
+        maven { url "https://dl.bintray.com/kotlinx/kotlinx" }
         maven { url 'https://dl.bintray.com/kotlin/ktor' }
         mavenCentral()
         jcenter()
